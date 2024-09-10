@@ -1,5 +1,5 @@
 # psy1903
 
-## Your Name Here
+## Kaya Vadhan
 
 Course work for psy1903
