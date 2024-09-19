@@ -1,4 +1,3 @@
-let courseName = 'Programming for Psychologists';
-console.log(courseName.toUpperCase());
-console.log(courseName.indexOf("Psychologists"));
-console.log(courseName.replace("Psychologists", "Coding"))
+let a = 5;
+let b = 10;
+console.log(a > 3 && b < 15);
