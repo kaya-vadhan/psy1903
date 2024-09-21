@@ -5,4 +5,5 @@
 _Record any prompts you put into an AI program this week to help with material in this course. You do not have to include the AI response, just your prompt._
 
 ## Outside sites
-_Link any outside sites you referenced this week. You should exclude any resources/links that were provided in the course material._
+https://stackoverflow.com/questions/35758584/cannot-redeclare-block-scoped-variable
+https://stackoverflow.com/questions/6211613/testing-whether-a-value-is-odd-or-even
