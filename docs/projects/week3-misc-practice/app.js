@@ -17,3 +17,14 @@ if (response == sum) {
 }
 
 alert(feedback + ' The expected answer is ' + sum);
+
+let age = prompt('How old are you?');
+if (age < 12) {
+    alert('Child');
+}
+if (age >= 12 && age < 18) {
+    alert('Teenager');
+}
+if (age >= 18) {
+    alert('Adult');
+}
