@@ -1,5 +1,7 @@
-let num1 = Math.random()
-let num2 = Math.random()
+let hi = 'hi'
+console.log(hi)
+let num1 = Math.floor(Math.random() * 10) + 1
+let num2 = Math.floor(Math.random() * 10) + 1
 let sum = num1 + num2
 
 let response = prompt('What is ' + num1 + ' + ' + num2 + ' ?');
