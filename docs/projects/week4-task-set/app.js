@@ -13,16 +13,17 @@ function convertTemp(temp, convertTo) {
     }
 }
 
-
-let lengths = []
-function getWordLengths(array) {
+let longestword = ''
+function getLongestWord(array) {
     for (let i = 0; i < array.length; i++) {
-        let wordnumber = array[i]
-        let wordlength = wordnumber.length;
-        lengths.push(wordlength);
+        let word = array[i]
+        let wordlength = word.length;
+        if (wordlength > longestword.length) {
+            longestword = word;
+        };
     }
-    return lengths
+    return longestword
 }
 
-let words = ['hi', 'banana', 'cherry', 'pear', 'bye'];
-console.log(getWordLengths(words)); // Expected output: [5, 6, 6, 4, 5]
+let words = ['apple', 'banana', 'cherry', 'pear', 'grape'];
+console.log(getLongestWord(words)); // Expected output: banana
