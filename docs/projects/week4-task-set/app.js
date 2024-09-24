@@ -13,3 +13,16 @@ function convertTemp(temp, convertTo) {
     }
 }
 
+
+let lengths = []
+function getWordLengths(array) {
+    for (let i = 0; i < array.length; i++) {
+        let wordnumber = array[i]
+        let wordlength = wordnumber.length;
+        lengths.push(wordlength);
+    }
+    return lengths
+}
+
+let words = ['hi', 'banana', 'cherry', 'pear', 'bye'];
+console.log(getWordLengths(words)); // Expected output: [5, 6, 6, 4, 5]
