@@ -13,10 +13,9 @@ function convertTemp(temp, convertTo) {
     }
 }
 
-let longestword = ''
-function getLongestWord(array) {
-    for (let i = 0; i < array.length; i++) {
-        let word = array[i]
+let longestword = '';
+function getLongestWord() {
+    for (let word of words) {
         let wordlength = word.length;
         if (wordlength > longestword.length) {
             longestword = word;
@@ -25,5 +24,3 @@ function getLongestWord(array) {
     return longestword
 }
 
-let words = ['apple', 'banana', 'cherry', 'pear', 'grape'];
-console.log(getLongestWord(words)); // Expected output: banana
