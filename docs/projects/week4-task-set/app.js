@@ -35,3 +35,16 @@ function getOddNumbers(numbers) {
     return results;
 }
 
+let array = []
+function filterNumbers(numbers, evenOrOdd) {
+    for (let number in numbers) {
+        if (evenOrOdd == 'even' && numbers[number] % 2 == 0) {
+            array.push(numbers[number]);
+        } else if (evenOrOdd == 'odd' && numbers[number] % 2 == 1) {
+            array.push(numbers[number]);
+        }
+    }
+    return array;
+}
+
+
