@@ -24,3 +24,15 @@ function getLongestWord() {
     return longestword
 }
 
+
+let results = [];
+function getOddNumbers(numbers) {
+    for (let number in numbers) {
+        if (numbers[number] % 2 == 1) {
+            results.push(numbers[number]);
+        }
+    }
+    return results;
+}
+
+console.log(getOddNumbers([12, 45, 10, 11, 61])); // Expected output: [45, 11, 61]
