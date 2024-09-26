@@ -25,16 +25,6 @@ function getLongestWord() {
 }
 
 
-let results = [];
-function getOddNumbers(numbers) {
-    for (let number in numbers) {
-        if (numbers[number] % 2 == 1) {
-            results.push(numbers[number]);
-        }
-    }
-    return results;
-}
-
 let array = []
 function filterNumbers(numbers, evenOrOdd) {
     for (let number in numbers) {
@@ -46,5 +36,33 @@ function filterNumbers(numbers, evenOrOdd) {
     }
     return array;
 }
+
+let results = {
+    number: [],
+    response: [],
+    correct: [],
+    responseTime: []
+}
+alert("Welcome to the even/odd response time task. You are about to see a series of numbers. If the number you see is EVEN, type the letter 'e'. If the number you see is odd, type the letter 'o'. Please answer as quickly and accurately as possible.");
+for (i = 0; i < 5; i++) {
+    let number = Math.floor(Math.random() * 10) + 1;
+    results.number.push(number);
+    let start = Date.now();
+    let response = prompt('Number: ' + number + '. Type "e" if it is even or "o" if it is odd.');
+    let end = Date.now();
+    if (response == 'e') {
+        evenorodd = 0;
+    } else if (response == 'o') {
+        evenorodd = 1;
+    }
+    results.response.push(response);
+    results.correct.push((number % 2) == evenorodd);
+    results.responseTime.push(end - start);
+}
+alert("Thank you for your time.");
+console.log(results)
+
+
+
 
 
