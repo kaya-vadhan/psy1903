@@ -1,7 +1,8 @@
-# Outside Resources Log - Week 4
+# Outside Resources Log - Week 5
 
 
 ## AI Prompts
-_Record any prompts you put into an AI program this week to help with material in this course. You do not have to include the AI response, just your prompt._
+difference between . and [] in javascript using jspsych accessing items in array
+how to access a specific item from a specific trial 
 
 ## Outside sites

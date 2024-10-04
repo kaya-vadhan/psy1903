@@ -16,27 +16,40 @@ let welcomeTrial = {
 timeline.push(welcomeTrial);
 
 for (let condition of conditions) {
-    let conditionTrial = {
-        type: jsPsychSurveyHtmlForm,
-        preamble: `<p>What is ${condition.num1} + ${condition.num2}?</p>`,
-        html: `<p><input type='number' name='answer' id='answer'></p>`,
-        autofocus: 'answer', // id of the field we want to auto-focus on when the trial starts
-        button_label: 'Submit Answer',
-        data: {
-            collect: true,
-        },
-        on_finish: function (data) {
-            if (data.response == condition.answer == true) {
-                data.correct = true;
-            } else {
-                data.correct = false;
-            }
-            data.num1 = condition.num1
-            data.num2 = condition.num2
-            data.answer = condition.answer
-        }
+    let instructionsTrial = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: `
+    <h1>${condition.title}</h1> 
+    <p>Press SPACE to begin.</p>
+    `,
+        choices: [' ']
     }
-    timeline.push(conditionTrial);
+    timeline.push(instructionsTrial)
+    for (let k = 0; k < 3; k++) {
+        let conditionTrial = {
+            type: jsPsychSurveyHtmlForm,
+            preamble: `<p>What is ${condition.questions[k].num1} + ${condition.questions[k].num2}?</p>`,
+            html: `<p><input type='number' name='answer' id='answer'></p>`,
+            autofocus: 'answer', // id of the field we want to auto-focus on when the trial starts
+            button_label: 'Submit Answer',
+            data: {
+                collect: true,
+            },
+            on_finish: function (data) {
+                data.response = data.response.answer
+                if (data.response == condition.questions[k].answer == true) {
+                    data.correct = true;
+                } else {
+                    data.correct = false;
+                }
+                data.block = condition.questions[k].block
+                data.num1 = condition.questions[k].num1
+                data.num2 = condition.questions[k].num2
+                data.answer = condition.questions[k].answer
+            }
+        }
+        timeline.push(conditionTrial)
+    }
 };
 
 
