@@ -6,10 +6,10 @@ let timeline = [];
 let welcomeTrial = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <h1>Welcome to the Math Response Time Task!</h1> 
+    <h1><span class = 'title'>Welcome to the Math Response Time Task!</span></h1> 
     <p>In this experiment, you will be shown a series of math questions.</p>
     <p>Please answer as quickly and accurately as possible.</p>
-    <p>Press SPACE to begin.</p>
+    <p>Press <span class='key'>SPACE</span> to begin.</p>
     `,
     choices: [' ']
 };
@@ -20,7 +20,7 @@ for (let condition of conditions) {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `
     <h1>${condition.title}</h1> 
-    <p>Press SPACE to begin.</p>
+    <p>Press <span class='key'>SPACE</span> to begin.</p>
     `,
         choices: [' ']
     }
@@ -28,8 +28,8 @@ for (let condition of conditions) {
     for (let k = 0; k < 3; k++) {
         let conditionTrial = {
             type: jsPsychSurveyHtmlForm,
-            preamble: `<p>What is ${condition.questions[k].num1} + ${condition.questions[k].num2}?</p>`,
-            html: `<p><input type='number' name='answer' id='answer'></p>`,
+            preamble: `<p>What is <span class ='equation'><span class ='numbers'>${condition.questions[k].num1}</span> + <span class ='numbers'>${condition.questions[k].num2}</span></span>?</p>`,
+            html: `<p><input type='text' name='answer' id='answer'></p>`,
             autofocus: 'answer', // id of the field we want to auto-focus on when the trial starts
             button_label: 'Submit Answer',
             data: {

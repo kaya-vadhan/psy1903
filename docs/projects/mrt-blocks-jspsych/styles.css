@@ -1,0 +1,34 @@
+.key {
+    border: 1px solid black;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+/*border,
+border-radius,
+padding,
+font-size,
+font-family,
+background-color,
+*/
+.title {
+    background-color: teal;
+    font-family: Georgia;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.equation {
+    font-size: 36px;
+}
+
+.numbers {
+    background-color: yellow;
+}
+
+.jspsych-display-element input[type=text] {
+    font-size: 36px;
+    text-align: center;
+    width: 100px;
+}
