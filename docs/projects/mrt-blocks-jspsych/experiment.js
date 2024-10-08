@@ -15,6 +15,33 @@ let welcomeTrial = {
 };
 timeline.push(welcomeTrial);
 
+let likertTrial = {
+    type: jsPsychSurveyLikert,
+    questions: [
+        {
+            prompt: "I enjoy solving math problems.",
+            labels: [
+                "Strongly Disagree",
+                "Disagree",
+                "Neutral",
+                "Agree",
+                "Strongly Agree"
+            ]
+        },
+        {
+            prompt: "I find math easy.",
+            labels: [
+                "Strongly Disagree",
+                "Disagree",
+                "Neutral",
+                "Agree",
+                "Strongly Agree"
+            ]
+        }
+    ]
+}
+timeline.push(likertTrial);
+
 for (let condition of conditions) {
     let instructionsTrial = {
         type: jsPsychHtmlKeyboardResponse,
