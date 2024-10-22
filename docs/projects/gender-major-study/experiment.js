@@ -5,13 +5,16 @@ let welcomeTrial = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
     <h1><span class = 'title'>Welcome to the Gender-Major IAT Study!</span></h1> 
-    <p>In this experiment..</p>
+    <p>In this experiment, you will complete the following three tasks:</p>
+    <div class = 'story'>
+    <p><ul>Task 1</ul></p>
+    </div?
     <p>Press <span class='key'>SPACE</span> to begin.</p>
     `,
     choices: [' ']
 };
 
-//timeline.push(welcomeTrial);
+timeline.push(welcomeTrial);
 
 // PRIMER
 let primer = ['stereotypical', 'atypical'];
@@ -20,9 +23,11 @@ let primerDisplay = primer[Math.floor(Math.random() * primer.length)];
 let primerTrial = {
     type: jsPsychSurveyHtmlForm,
     preamble: `
-    <h1><span class = 'title'>Part 1</span></h1> 
+    <h1><span class = 'title'>Task 1 of 3</span></h1> 
+    <div class = 'story'>
     <p>Consider the following image.</p>,
-    <img src='images/${primerDisplay}.png'>
+    <img src='images/${primerDisplay}.png'>,
+    </div>
     <p>Please describe two things you observe about the image in the text box below.</p>,
     `,
     html: `<p><input type='text' name='answer' id='answer'></p>`,
@@ -32,20 +37,20 @@ let primerTrial = {
         data.whichPrime = primerDisplay;
     }
 }
-//timeline.push(primerTrial);
+timeline.push(primerTrial);
 
-// IAT
+//IAT
 
 let iatInstructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <h1><span class = 'title'>Part 2</span></h1> 
-    <p>IAT TASK</p>
+    <h1><span class = 'title'>Task 2 of 3</span></h1> 
+    <p>In this task, you will be shown a series of words and asked to sort them into categories.</p>
     <p>Press <span class='key'>SPACE</span> to begin.</p>
     `,
     choices: [' ']
 };
-//timeline.push(iatInstructions);
+timeline.push(iatInstructions);
 
 let iteration = 0
 for (let condition of conditions) {
@@ -56,26 +61,37 @@ for (let condition of conditions) {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `
         <h1><span class = 'title'>Part ${iteration} of 4</span></h1> 
-        <p>In this part, the two categories will be: ${condition.categories[0]} and ${condition.categories[1]}</p>
+        <p>In this part, the two categories will be: <${condition.categories[0]} and ${condition.categories[1]}</p>
         <p>Press <span class='key'>SPACE</span> to begin.</p>
         `,
         choices: [' ']
     };
     timeline.push(blockInstructions);
+
     //36 ROUNDS
-    for (i = 0; i < 36; i++) {
+    for (let trial of condition.trials) {
         let wordDisplay = {
             type: jsPsychHtmlKeyboardResponse,
             stimulus: `
             <p>Press <span class='key'>F</span> for ${condition.categories[0]}</p>
             <p>Press <span class='key'>J</span> for ${condition.categories[1]}</p>
-            <h1><span class = 'target'>${condition.trials[iteration - 1].word[i]}</span></h1>
+            <h1><span class = 'target'>${trial.word}</span></h1>
             `,
             choices: ['f', 'j'],
-        };
+            data: {
+                collect: true,
+            },
+            on_finish: function (data) {
+                if (data.response == trial.expectedResponse == true) {
+                    data.correct = true;
+                } else {
+                    data.correct = false;
+                }
+                console.log(data.correct);
+            }
+        }
         timeline.push(wordDisplay);
-    }
-
+    };
 };
 
 
@@ -85,8 +101,8 @@ for (let condition of conditions) {
 let likertInstructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <h1><span class = 'title'>Part 3</span></h1> 
-    <p>Likert Task</p>
+    <h1><span class = 'title'>Task 3 of 3</span></h1> 
+    <p>Please answer the following questions.</p>
     <p>Press <span class='key'>SPACE</span> to begin.</p>
     `,
     choices: [' ']
@@ -156,5 +172,3 @@ let debriefTrial = {
 timeline.push(debriefTrial);
 
 jsPsych.run(timeline);
-
-

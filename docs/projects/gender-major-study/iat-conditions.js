@@ -1,20 +1,20 @@
 // Modify the following `blocksA`, `blocksB`, and `words` arrays with appropriate values for your experiment
 let blocksA = [
-    ['men', 'women'],
-    ['family', 'career']
+    ['Men', 'Women'],
+    ['Science', 'Liberal Arts']
 ];
 
 let blocksB = [
-    ['family or men', 'career or women'],
-    ['family or women', 'career or men']
+    ['Men or Science', 'Women or Liberal Arts'],
+    ['Men or Liberal Arts', 'Women or Science']
 ];
 
 // There should be 10 words per category
 let words = {
-    men: ['Calvin', 'Ben', 'Jamal', 'Charles', 'Mateo', 'Henry', 'Lucas', 'Andrew', 'Darnell', 'George'],
-    women: ['Mariah', 'Emily', 'Julia', 'Brenda', 'Tasha', 'Priya', 'Kelsey', 'Jasmine', 'Grace', 'Camila'],
-    family: ['home', 'wedding', 'children', 'relative', 'parent', 'cousin', 'sibling', 'spouse', 'house', 'baby'],
-    career: ['corporation', 'salary', 'interview', 'promotion', 'resume', 'office', 'income', 'hiring', 'bosses', 'corporate'],
+    Men: ['Man', 'Son', 'Father', 'Boy', 'Uncle', 'Grandpa', 'Husband', 'Male', 'Gentleman', 'Brother'],
+    Women: ['Mother', 'Wife', 'Aunt', 'Woman', 'Girl', 'Female', 'Grandma', 'Daughter', 'Sister', 'Lady'],
+    Science: ['Astronomy', 'Math', 'Chemistry', 'Physics', 'Biology', 'Geology', 'Engineering', 'Robotics', 'Ecology', 'Statistics'],
+    'Liberal Arts': ['History', 'Arts', 'Humanities', 'English', 'Philosophy', 'Music', 'Literature', 'Anthropology', 'Dance', 'Sociology'],
 };
 
 
@@ -23,7 +23,7 @@ let words = {
 // when developing your experiment you can reduce this number
 // to expedite the process of testing the experiment
 // Always set the count to an even number
-let count = 4;
+let count = 36;
 
 
 
