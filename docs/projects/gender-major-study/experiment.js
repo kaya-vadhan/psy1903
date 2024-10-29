@@ -183,7 +183,6 @@ let resultsTrial = {
         `,
     on_start: function () {
         let prefix = 'gender-major-iat';
-        //need to go back to vid and check this:
         let dataPipeExperimentId = 'cD9I38T1Qqrq';
         let forceOSFSave = true;
 
@@ -201,8 +200,7 @@ let resultsTrial = {
             destination = 'https://pipe.jspsych.org/api/data/';
         }
 
-        // Send the results to our saving end point
-        fetch(destination, { //allows us to send data to some end point
+        fetch(destination, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
