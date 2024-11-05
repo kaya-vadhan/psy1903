@@ -21,7 +21,7 @@ let welcomeTrial = {
     <ul class='custom-bullets'>
         <li>In Task 1 you will be asked to look at a picture and write a short response.</li>
         <li>In Task 2 you will be asked to categorize a series of images.</li>
-        <li>In Task 3 you will answer a brief set of questions</li>
+        <li>In Task 3 you will answer a brief set of questions.</li>
     </div>
     <p>Press the <span class='key'>SPACE</span> key to begin.</p>
     `,
