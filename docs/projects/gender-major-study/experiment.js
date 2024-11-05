@@ -1,4 +1,6 @@
-let jsPsych = initJsPsych();
+let jsPsych = initJsPsych({
+    show_progress_bar: true
+});
 let timeline = [];
 
 
@@ -7,7 +9,6 @@ let enterFullScreenTrial = {
     type: jsPsychFullscreen,
     fullscreen_mode: true
 };
-
 
 timeline.push(enterFullScreenTrial);
 
