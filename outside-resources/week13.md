@@ -1,17 +1,17 @@
-# Outside Resources Log - Week 12
+# Outside Resources Log - Week 13
 
 
 ## AI Prompts
-<ul>
-  <li>lexical error: invalid char in json text.
-</li>
-  <li>Error in [<-.data.frame(*tmp*, i, "whichPrime", value = c(2L, 1L,  : 
-  replacement has 146 rows, data has 1
-</li>
-  <li>how to access a specific level of a factor with two levels
-</li>
-
-</ul>
+None
 
 ## Outside sites
-None
+<ul>
+  <li>https://ggplot2.tidyverse.org/reference/theme.html
+</li>
+  <li>https://ggplot2.tidyverse.org/reference/element.html
+</li>
+  <li>https://stackoverflow.com/questions/63120335/adding-color-to-boxplot-in-ggplot2
+</li>
+<li>https://stackoverflow.com/questions/28742870/use-of-scale-x-discrete-in-r-ggplot2</li>
+<li>https://stackoverflow.com/questions/23564607/how-to-change-x-axis-tick-label-names-order-and-boxplot-colour-using-r-ggplot</li>
+</ul>
